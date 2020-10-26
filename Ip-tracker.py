@@ -1,0 +1,11 @@
+import geoip2.database
+reader = geoip2.database.Reader(r'C:\Users\hellm\Desktop\New folder\GeoLite2-City_20201020\GeoLite2-City_20201020\GeoLite2-City.mmdb')
+i = input("Input The IP: ")
+response = reader.city(i)
+print("County Code is", response.country.iso_code)
+print("Country is",response.country.name)
+print("Postal Code is",response.postal.code)
+print("Subdivision is",response.subdivisions.most_specific.name)
+print("City is",response.city.name)
+print("Latitude is",response.location.latitude)
+print("Longitude is",response.location.longitude)
